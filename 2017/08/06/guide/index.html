@@ -23,12 +23,12 @@
 <meta property="og:site_name" content="oceanmeetssky">
 <meta property="og:description" content="使用Hexo+GitHubPage搭建博客是一种非常简单的搭建个人博客的方法，本文将介绍在Windows平台下的博客搭建、设置以及更新和管理博客。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="http://yoursite.com/img/picture.png">
-<meta property="og:updated_time" content="2017-08-10T13:16:33.036Z">
+<meta property="og:image" content="http://yoursite.com/2017/08/06/guide/img/picture.png">
+<meta property="og:updated_time" content="2017-08-10T14:01:27.559Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="教程-博客篇">
 <meta name="twitter:description" content="使用Hexo+GitHubPage搭建博客是一种非常简单的搭建个人博客的方法，本文将介绍在Windows平台下的博客搭建、设置以及更新和管理博客。">
-<meta name="twitter:image" content="http://yoursite.com/img/picture.png">
+<meta name="twitter:image" content="http://yoursite.com/2017/08/06/guide/img/picture.png">
     
     
         
@@ -282,15 +282,15 @@
 </ul>
 <h3 id="分享和评论"><a href="#分享和评论" class="headerlink" title="分享和评论"></a>分享和评论</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">sharing_options:</span></div><div class="line"><span class="attr">    facebook:</span></div><div class="line"><span class="attr">        icon:</span> <span class="string">"fa-facebook-official"</span></div><div class="line"><span class="attr">        url:</span> <span class="string">"https://www.facebook.com/sharer/sharer.php?u=<span class="template-variable">&#123;&#123;post.permalink&#125;&#125;</span>"</span></div></pre></td></tr></table></figure>
 <h3 id="隐藏"><a href="#隐藏" class="headerlink" title="隐藏"></a>隐藏</h3><p>对于目录中以”_”开头的文件，默认是不会渲染的，这个功能可以作为草稿功能更加方便，当然，也可以使用主题中的draft文件</p>
-<h3 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">![](/img/picture.png)</span></div></pre></td></tr></table></figure>
-<p><img src="/img/picture.png" alt=""></p>
+<h3 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![](/img/picture.png) #这是在</div></pre></td></tr></table></figure>
+<p><img src="/2017/08/06/guide/img/picture.png" alt=""></p>
 <h3 id="插入音频、视频"><a href="#插入音频、视频" class="headerlink" title="插入音频、视频"></a>插入音频、视频</h3><p>直接插/入如网易云音乐、优酷等网站提供的网页代码。markdown支持将网页代码直接解析。</p>
 <h3 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h3><p>安装wordcount插件<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">npm</span> <span class="string">i</span> <span class="bullet">--save</span> <span class="string">hexo-wordcount</span></div></pre></td></tr></table></figure></p>
 <p>在\Tranquilpeak\layout_partial 文件夹下，post.ejs文件中,根据插入页面的位置插入如下代码，在每篇文章中显示总字数<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-count"</span>&gt;</span>全文共计<span class="tag">&lt;<span class="name">%=</span> <span class="attr">wordcount</span>(<span class="attr">post.content</span>) %&gt;</span>字<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>在\Tranquilpeak\layout_partial 文件夹下，index.ejs文件中，根据插入页面的位置插入如下代码，在首页显示博客总字数<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-count"</span> &gt;</span> 共计<span class="tag">&lt;<span class="name">%=</span> <span class="attr">totalcount</span>(<span class="attr">site</span>) %&gt;</span> 字<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <h3 id="文章模板"><a href="#文章模板" class="headerlink" title="文章模板"></a>文章模板</h3><p>在\hexo\scaffolds 文件夹下，分别有对文章、页面和草稿的模板，可以对Front-matter和正文修改模板。</p>
-<h3 id="定制404页面"><a href="#定制404页面" class="headerlink" title="定制404页面"></a>定制404页面</h3><p>在tranquilpeak文件夹下的source文件夹中放入404.html文件，当页面不存在，会自动跳转到该页面。如果是404.md，则需要在YAML front matter （开头—内）中配置<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">title:</span> <span class="string">Page</span> <span class="string">not</span> <span class="string">found</span></div><div class="line"><span class="attr">meta:</span> <span class="literal">false</span></div><div class="line"><span class="attr">actions:</span> <span class="literal">false</span></div><div class="line"><span class="attr">comments:</span> <span class="literal">false</span></div><div class="line"><span class="attr">permalink:</span>   <span class="comment">#覆盖文章网址</span></div></pre></td></tr></table></figure></p>
-<p>但为了美观推荐html方法，不过当404出现在二级或更多级的目录下时，css仍然在根目录下，此时无法加载css样式。</p>
+<h3 id="定制404页面"><a href="#定制404页面" class="headerlink" title="定制404页面"></a>定制404页面</h3><p>在tranquilpeak文件夹下的source文件夹中放入404.html文件，当页面不存在，会自动跳转到该页面。如果是404.md，则需要在YAML front matter （开头—内）中配置<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">title:</span> <span class="string">Page</span> <span class="string">not</span> <span class="string">found</span></div><div class="line"><span class="attr">meta:</span> <span class="literal">false</span></div><div class="line"><span class="attr">actions:</span> <span class="literal">false</span></div><div class="line"><span class="attr">comments:</span> <span class="literal">false</span></div><div class="line"><span class="attr">permalink:</span> <span class="number">404.</span><span class="string">html</span>  <span class="comment">#覆盖文章网址</span></div></pre></td></tr></table></figure></p>
+<p>可以不新建404.md文件，不过当404出现在二级或更多级的目录下时，css仍然在根目录下，此时无法加载css样式。</p>
 <h3 id="网页图标"><a href="#网页图标" class="headerlink" title="网页图标"></a>网页图标</h3><p>在该主题下的_config.yml文件下找到如下属性：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">favicon:</span> <span class="string">favicon.ico</span></div></pre></td></tr></table></figure></p>
 <h2 id="careful"><a href="#careful" class="headerlink" title="careful"></a>careful</h2><ol>
 <li><p>在修改本地主题的时候一定要执行以下命令，记得做好备份：</p>
@@ -304,7 +304,7 @@
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
-        <span class="post-count">全文共计1,696字</span>
+        <span class="post-count">全文共计1,700字</span>
         
         
             <div class="post-actions-wrap">
@@ -676,7 +676,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://yoursite.com/2017/08/10/photo0000/">
+                        <a class="link-unstyled" href="http://yoursite.com/2017/08/10/photo0002/">
                             <h3 class="media-heading">摄影-湖光山色</h3>
                         </a>
                         <span class="media-meta">
@@ -686,7 +686,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><p>创意光影摄影——湖光山色，发表于Zine原文链接：<a href="http://www.zine.la/article/9f1388a2791a11e7808f52540d79d783/" target="_blank" rel="external">http://www.zine.la/article/9f1388a2791a11e7808f52540d79d783/</a><br></div>
+                        <div class="media-content hide-xs font-merryweather"><p>创意光影摄影——湖光山色，发表于Zine原文链接：<a href="http://www.zine.la/article/9f1388a2791a11e7808f52540d79d783/" target="_blank" rel="external">http://www.zine.la/article/9f1388a2791a11e7808f52540d79d783/</a><br></p></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
