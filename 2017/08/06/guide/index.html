@@ -24,7 +24,7 @@
 <meta property="og:description" content="使用Hexo+GitHubPage搭建博客是一种非常简单的搭建个人博客的方法，本文将介绍在Windows平台下的博客搭建、设置以及更新和管理博客。">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="http://yoursite.com/2017/08/06/guide/img/picture.png">
-<meta property="og:updated_time" content="2017-08-10T14:01:27.559Z">
+<meta property="og:updated_time" content="2017-08-10T14:41:50.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="教程-博客篇">
 <meta name="twitter:description" content="使用Hexo+GitHubPage搭建博客是一种非常简单的搭建个人博客的方法，本文将介绍在Windows平台下的博客搭建、设置以及更新和管理博客。">
@@ -282,8 +282,8 @@
 </ul>
 <h3 id="分享和评论"><a href="#分享和评论" class="headerlink" title="分享和评论"></a>分享和评论</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">sharing_options:</span></div><div class="line"><span class="attr">    facebook:</span></div><div class="line"><span class="attr">        icon:</span> <span class="string">"fa-facebook-official"</span></div><div class="line"><span class="attr">        url:</span> <span class="string">"https://www.facebook.com/sharer/sharer.php?u=<span class="template-variable">&#123;&#123;post.permalink&#125;&#125;</span>"</span></div></pre></td></tr></table></figure>
 <h3 id="隐藏"><a href="#隐藏" class="headerlink" title="隐藏"></a>隐藏</h3><p>对于目录中以”_”开头的文件，默认是不会渲染的，这个功能可以作为草稿功能更加方便，当然，也可以使用主题中的draft文件</p>
-<h3 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![](/img/picture.png) #这是在</div></pre></td></tr></table></figure>
-<p><img src="/2017/08/06/guide/img/picture.png" alt=""></p>
+<h3 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![](/img/picture.png) #这是在Tranquilpeak\source文件夹下面自己建的img文件夹而对于处理大量图片的文章是不适合的</div></pre></td></tr></table></figure>
+<p><img src="/2017/08/06/guide/img/picture.png" alt=""><br>安装插件：<code>npm install hexo-asset-image --save</code><br>此时输入 <code>hexo n &quot;xxxx&quot;</code>新建文章时，会同时新建同名文件夹，将图片放入该文件夹内，并将图片地址写为：<code>文件夹名/文件名</code>即可，开头不需要输入斜杠</p>
 <h3 id="插入音频、视频"><a href="#插入音频、视频" class="headerlink" title="插入音频、视频"></a>插入音频、视频</h3><p>直接插/入如网易云音乐、优酷等网站提供的网页代码。markdown支持将网页代码直接解析。</p>
 <h3 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h3><p>安装wordcount插件<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">npm</span> <span class="string">i</span> <span class="bullet">--save</span> <span class="string">hexo-wordcount</span></div></pre></td></tr></table></figure></p>
 <p>在\Tranquilpeak\layout_partial 文件夹下，post.ejs文件中,根据插入页面的位置插入如下代码，在每篇文章中显示总字数<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-count"</span>&gt;</span>全文共计<span class="tag">&lt;<span class="name">%=</span> <span class="attr">wordcount</span>(<span class="attr">post.content</span>) %&gt;</span>字<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure></p>
@@ -304,7 +304,7 @@
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
-        <span class="post-count">全文共计1,700字</span>
+        <span class="post-count">全文共计1,799字</span>
         
         
             <div class="post-actions-wrap">
