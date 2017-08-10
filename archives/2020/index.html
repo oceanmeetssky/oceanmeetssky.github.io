@@ -191,7 +191,7 @@
     <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -219,72 +219,29 @@
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
-<li><a href="#综述">综述</a></li>
-<li><a href="#用hexo搭建博客">用hexo搭建博客</a></li>
-<li><a href="#基本命令">基本命令</a></li>
-<li><a href="#选择主题，以Tranquilpeak为例">选择主题，以Tranquilpeak为例</a></li>
-<li><a href="#扩展功能">扩展功能</a><ul>
-<li><a href="#分类">分类</a></li>
-<li><a href="#标签">标签</a></li>
-<li><a href="#时间排序">时间排序</a></li>
-<li><a href="#搜索">搜索</a></li>
-<li><a href="#缩略+缩略图">缩略+缩略图</a></li>
-<li><a href="#插入视频、音频">插入视频、音频</a></li>
-<li><a href="#icon">icon</a></li>
-<li><a href="#icon">icon</a></li>
-</ul>
-</li>
-<li><a href="#careful">careful</a></li>
-</ul>
-<h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><p>使用Hexo+GitHubPage搭建博客是一种非常简单的搭建个人博客的方法，本文将介绍在Windows平台下的博客搭建、设置以及更新和管理博客。</p>
-<p><em>注：在线搭建iCloud9也是很方便的，但因为需要有国外信用卡才能注册而暂时放弃这种方法。</em></p>
-<h2 id="用hexo搭建博客"><a href="#用hexo搭建博客" class="headerlink" title="用hexo搭建博客"></a>用hexo搭建博客</h2><p>官方教程： <a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/index.html</a><br>参考链接：<a href="http://blog.csdn.net/wx_jin/article/details/51027783" target="_blank" rel="external">http://blog.csdn.net/wx_jin/article/details/51027783</a></p>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>
-<li>安装Node.js <a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">https://nodejs.org/zh-cn/</a></li>
-<li>安装Git <a href="https://git-scm.com/download/win" target="_blank" rel="external">https://git-scm.com/download/win</a><br>一步步按指令安装即可。</li>
-<li>注册GitHub账号</li>
-<li>产生生产新的SSH Key</li>
-</ol>
-<p>在Git Bash执行代码：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">ssh-keygen</span> <span class="bullet">-t</span> <span class="string">rsa</span> <span class="bullet">-C</span> <span class="string">"xxxx@gmail.com"</span></div></pre></td></tr></table></figure></p>
-<p>成功后在C:\Users\xxx.ssh的文件夹下会产生两个文件id_rsa 以及id_rsa.pub</p>
-<ol>
-<li>在GitHub网页右上角，点击你的头像，选择Settings-&gt; SSH keys-&gt;New SSH key，将id_rsa.pub复制粘贴到“key”中</li>
-</ol>
-<h3 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h3><ol>
-<li><p>安装hexo</p>
-</li>
-<li></li>
-</ol>
-<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="string">hexo</span> <span class="string">clean</span> <span class="comment">#</span></div><div class="line"><span class="string">hexo</span> <span class="string">g</span> <span class="comment">#</span></div><div class="line"><span class="string">hexo</span> <span class="string">server</span> <span class="comment">#</span></div><div class="line"><span class="string">hexo</span> <span class="string">d</span> <span class="comment">#</span></div><div class="line"><span class="string">hexo</span> <span class="string">new</span> <span class="string">""</span> <span class="comment">#</span></div></pre></td></tr></table></figure>
-<h2 id="选择主题，以Tranquilpeak为例"><a href="#选择主题，以Tranquilpeak为例" class="headerlink" title="选择主题，以Tranquilpeak为例"></a>选择主题，以Tranquilpeak为例</h2><p>参考链接：<a href="http://www.jianshu.com/p/d4294d83b709" target="_blank" rel="external">http://www.jianshu.com/p/d4294d83b709</a></p>
-<h2 id="careful"><a href="#careful" class="headerlink" title="careful"></a>careful</h2><ol>
-<li><p>在修改本地主题的时候一定要执行以下命令，当然，清除之前，不同的文件要备份：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">hexo</span> <span class="string">clean</span></div><div class="line"><span class="string">hexo</span> <span class="string">generator</span> <span class="comment">#简写 hexo g</span></div><div class="line"><span class="string">hexo</span> <span class="string">deploy</span> <span class="comment">#简写 hexo d</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>如果只是修改了博客的内容，不需要反复generate，直接在server刷新就能看到最新的修改的效果了。</p>
-</li>
-</ol>
-
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>使用Hexo+GitHubPage搭建博客是一种非常简单的搭建个人博客的方法，本文将介绍在Windows平台下的博客搭建、设置以及更新和管理博客。<br>
                     
+                        <a href="/2020/08/06/guide/" class="postShorten-excerpt_link link">
+                            阅读全文
+                        </a>
                         
-                    
-                    
-                        <p>
-                            <a href="/2020/08/06/guide/#post-footer" class="postShorten-excerpt_link link">
-                                评论和共享
-                            </a>
-                        </p>
                     
                 </div>
             
         </div>
         
+            <a href="/2020/08/06/guide/">
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" itemprop="image" src="http://yoursite.com/2020/08/06/guide//img/h.jpg"/>
+                </div>
+            </a>
+            
+        
     </article>
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -312,18 +269,13 @@
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>以这篇<a href="/2020/08/06/guide/">教程-博客篇</a>为例<br>代码高亮，并加上行号<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">```</span> <span class="string">yaml</span></div><div class="line"><span class="string">(```)</span></div></pre></td></tr></table></figure></p>
-
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>markdown语言<br>
                     
+                        <a href="/2020/08/06/markdown/" class="postShorten-excerpt_link link">
+                            阅读全文
+                        </a>
                         
-                    
-                    
-                        <p>
-                            <a href="/2020/08/06/markdown/#post-footer" class="postShorten-excerpt_link link">
-                                评论和共享
-                            </a>
-                        </p>
                     
                 </div>
             
@@ -412,25 +364,6 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://yoursite.com/2016/08/06/hello-world/">
-                            <h3 class="media-heading">Hello World</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    2016年8月6日
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
-                
-                <div class="media">
-                    
-                    <div class="media-body">
                         <a class="link-unstyled" href="http://yoursite.com/2017/08/06/photo001/">
                             <h3 class="media-heading">摄影-碧蓝湖水映入谁眼帘</h3>
                         </a>
@@ -441,7 +374,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><p>摄影-碧蓝湖水映入谁眼帘<br></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -460,13 +393,19 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><p>markdown语言<br></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
                 </div>
                 
                 <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="http://yoursite.com/2020/08/06/guide/">
+                            <img class="media-image" src="http://yoursite.com/2020/08/06/guide//img/h.jpg" width="90" height="90"/>
+                        </a>
+                    </div>
                     
                     <div class="media-body">
                         <a class="link-unstyled" href="http://yoursite.com/2020/08/06/guide/">
@@ -479,7 +418,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><p>使用Hexo+GitHubPage搭建博客是一种非常简单的搭建个人博客的方法，本文将介绍在Windows平台下的博客搭建、设置以及更新和管理博客。<br></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -504,7 +443,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><p>欢迎来到Ocean的博客世界，这里有关于<strong><a href="/all-categories/">前端、设计、摄影、随笔</a></strong>的经验、作品和感悟。<br></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -517,7 +456,7 @@
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 5 篇文章
+                找到 4 篇文章
             </p>
         </div>
     </div>
