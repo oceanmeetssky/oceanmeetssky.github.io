@@ -24,7 +24,7 @@
 <meta property="og:description" content="使用Hexo+GitHubPage搭建博客是一种非常简单的搭建个人博客的方法，本文将介绍在Windows平台下的博客搭建、设置以及更新和管理博客。">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://oceanmeetssky.github.io/2017/08/06/guide/img/picture.png">
-<meta property="og:updated_time" content="2017-08-12T14:38:44.269Z">
+<meta property="og:updated_time" content="2017-08-12T14:55:14.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="教程-博客篇">
 <meta name="twitter:description" content="使用Hexo+GitHubPage搭建博客是一种非常简单的搭建个人博客的方法，本文将介绍在Windows平台下的博客搭建、设置以及更新和管理博客。">
@@ -292,7 +292,9 @@
 <h3 id="定制404页面"><a href="#定制404页面" class="headerlink" title="定制404页面"></a>定制404页面</h3><p>在tranquilpeak文件夹下的source文件夹中放入404.html文件，当页面不存在，会自动跳转到该页面。如果是404.md，则需要在YAML front matter （开头—内）中配置<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">title:</span> <span class="string">Page</span> <span class="string">not</span> <span class="string">found</span></div><div class="line"><span class="attr">meta:</span> <span class="literal">false</span></div><div class="line"><span class="attr">actions:</span> <span class="literal">false</span></div><div class="line"><span class="attr">comments:</span> <span class="literal">false</span></div><div class="line"><span class="attr">permalink:</span> <span class="number">404.</span><span class="string">html</span>  <span class="comment">#覆盖文章网址</span></div></pre></td></tr></table></figure></p>
 <p>可以不新建404.md文件，不过当404出现在二级或更多级的目录下时，css仍然在根目录下，此时无法加载css样式。</p>
 <h3 id="网页图标"><a href="#网页图标" class="headerlink" title="网页图标"></a>网页图标</h3><p>在该主题下的_config.yml文件下找到如下属性：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">favicon:</span> <span class="string">favicon.ico</span></div></pre></td></tr></table></figure></p>
-<p>但此主题特殊之处在于，查看审查元素时可以看到，facicon在最后生成的网页中的地址是<a href="http://yoursite.com" target="_blank" rel="external">http://yoursite.com</a> ，所以要将根目录下的<code>url</code>设置为网页地址。</p>
+<blockquote>
+<p>但此主题特殊之处在于，查看审查元素时可以看到，facicon在最后生成的网页中的地址是<a href="http://yoursite.com" target="_blank" rel="external">http://yoursite.com</a> ，所以要将根目录下的<code>url</code>设置为网页地址。<br>但这样在server上测试时，如果图片没有先上传，就无法预览到图片。<br>这个问题是困扰了我很久的，网上搜遍了答案，也用了审查元素，最后的解决办法居然是，查看源代码，前端做了这么久，还不知道审查元素看到的不是源代码。</p>
+</blockquote>
 <h2 id="careful"><a href="#careful" class="headerlink" title="careful"></a>careful</h2><ol>
 <li><p>在修改本地主题的时候一定要执行以下命令，记得做好备份：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">hexo</span> <span class="string">clean</span></div><div class="line"><span class="string">hexo</span> <span class="string">g</span></div><div class="line"><span class="string">hexo</span> <span class="string">d</span></div></pre></td></tr></table></figure>
@@ -305,7 +307,7 @@
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
-        <span class="post-count">全文共计1,853字</span>
+        <span class="post-count">全文共计1,943字</span>
         
         
             <div class="post-actions-wrap">
@@ -716,7 +718,7 @@
                     
                     <div class="media-body">
                         <a class="link-unstyled" href="https://oceanmeetssky.github.io/2017/08/12/photo0004/">
-                            <h3 class="media-heading">修图-蓝天白云</h3>
+                            <h3 class="media-heading">摄影-白云千载空悠悠</h3>
                         </a>
                         <span class="media-meta">
                             <span class="media-date text-small">
