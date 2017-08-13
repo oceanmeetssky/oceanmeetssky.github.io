@@ -24,7 +24,7 @@
 <meta property="og:description" content="使用Hexo+GitHubPage搭建博客是一种非常简单的搭建个人博客的方法，本文将介绍在Windows平台下的博客搭建、设置以及更新和管理博客。">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://oceanmeetssky.github.io/2017/08/06/guide/img/picture.png">
-<meta property="og:updated_time" content="2017-08-13T12:39:00.106Z">
+<meta property="og:updated_time" content="2017-08-13T13:20:01.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="教程-博客篇">
 <meta name="twitter:description" content="使用Hexo+GitHubPage搭建博客是一种非常简单的搭建个人博客的方法，本文将介绍在Windows平台下的博客搭建、设置以及更新和管理博客。">
@@ -281,10 +281,14 @@
 <p>如果搜索功能无效，可能需要<code>hexo clean</code>，每次更新了内容都需要重新输入<code>hexo algolia</code>，无其它代码配置<br>支持对标题、日期、摘要、标签、分类的搜索，对正文暂不支持</p>
 <h3 id="缩略-缩略图"><a href="#缩略-缩略图" class="headerlink" title="缩略+缩略图"></a>缩略+缩略图</h3><ul>
 <li>缩略显示：在需要显示在首页之后的内容结尾处加上 <code>&lt;!-- more --&gt;</code>,在这之后的内容不会显示在首页。或者使用摘要<code>&lt;!-- excerpt --&gt;</code>，则摘要中的文字（标签之前）的文字不会出现在打开的正文中</li>
-<li>缩略图（移动端不加载），在PC端，可以在文章左侧或右侧：<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">thumbnailImage:</span>  <span class="string">welcome/welcome.png</span> <span class="comment">#在文章开头的Front-matter中写，路径为“文章名（文件名）/图片名”</span></div><div class="line"><span class="attr">thumbnailImagePosition:</span> <span class="string">bottom</span> <span class="comment">#图片位置，可以为left/right/bottom，第一篇文章放bottom，后面都建议统一放左侧或右侧</span></div></pre></td></tr></table></figure>
+<li><p>缩略图（移动端不加载），在PC端，可以在文章左侧或右侧：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">thumbnailImage:</span>  <span class="string">welcome/welcome.png</span> <span class="comment">#在文章开头的Front-matter中写，路径为“文章名（文件名）/图片名”</span></div><div class="line"><span class="attr">thumbnailImagePosition:</span> <span class="string">bottom</span> <span class="comment">#图片位置，可以为left/right/bottom，第一篇文章放bottom，后面都建议统一放左侧或右侧</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>缩略图制作：可以用画图工具将图片打开，重新调整大小（建议调整为140*140），如果非方形图，将最小的值设为140，接着选择（左下角有像素），裁剪，保存</p>
+<h3 id="题图"><a href="#题图" class="headerlink" title="题图"></a>题图</h3><p>题图是一打开文章的全屏大图，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">coverImage: city.jpg #位置同缩略图</div><div class="line">coverSize： full/partial #full:全屏，partial：60%高度</div><div class="line">coverCaption: # 对图片的说明</div><div class="line">coverMeta: in/out # in: 标题、日期、分类等属于meta信息放在图片上（垂直居中），out: meta信息放在图片下</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="题图"><a href="#题图" class="headerlink" title="题图"></a>题图</h3><p>题图是一打开文章的全屏大图，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">coverImage: city.jpg #位置同缩略图</div><div class="line">coverSize： full/partial #full:全屏，partial：60%高度</div><div class="line">coverCaption: # 对图片的说明</div><div class="line">coverMeta: in/out # in: 标题、日期、分类等属于meta信息放在图片上（垂直居中），out: meta信息放在图片下</div></pre></td></tr></table></figure></p>
 <h3 id="分享和评论"><a href="#分享和评论" class="headerlink" title="分享和评论"></a>分享和评论</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">sharing_options:</span></div><div class="line"><span class="attr">    facebook:</span></div><div class="line"><span class="attr">        icon:</span> <span class="string">"fa-facebook-official"</span></div><div class="line"><span class="attr">        url:</span> <span class="string">"https://www.facebook.com/sharer/sharer.php?u=<span class="template-variable">&#123;&#123;post.permalink&#125;&#125;</span>"</span></div></pre></td></tr></table></figure>
 <h3 id="隐藏"><a href="#隐藏" class="headerlink" title="隐藏"></a>隐藏</h3><p>对于目录中以”_”开头的文件，默认是不会渲染的，这个功能可以作为草稿功能更加方便，当然，也可以使用主题中的draft文件</p>
 <h3 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![](/img/picture.png) #这是在Tranquilpeak\source文件夹下面自己建的img文件夹而对于处理大量图片的文章是不适合的</div></pre></td></tr></table></figure>
@@ -313,7 +317,7 @@
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
-        <span class="post-count">全文共计2,123字</span>
+        <span class="post-count">全文共计2,181字</span>
         
         
             <div class="post-actions-wrap">
