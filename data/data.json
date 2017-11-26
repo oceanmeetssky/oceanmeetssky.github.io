@@ -1,0 +1,16 @@
+{
+    "categories":[
+        "apple",
+        "orange",
+        "pinaple",
+        "grape",
+        "watermelon"
+    ],
+    "data":[
+        14,
+        24,
+        35,
+        4,
+        5
+    ]
+}

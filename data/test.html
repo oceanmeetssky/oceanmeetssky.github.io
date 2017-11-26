@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- http://echarts.baidu.com/tutorial.html#%E4%B8%AA%E6%80%A7%E5%8C%96%E5%9B%BE%E8%A1%A8%E7%9A%84%E6%A0%B7%E5%BC%8F -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ECharts南丁格尔图</title>
+        <script src="echarts.min.js"></script>
+        <script src="vintage.js"></script>
+        <style type="text/css">
+            *{margin: 0}
+        </style>
+    </head>
+    <body>
+        <div id="main" style="width: 100%;height:560px;"></div>
+        <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'), 'vintage');
+        myChart.setOption({
+            title: {
+                text: 'app使用情况',
+                textStyle: {fontSize: '25'},
+                left: 'center',
+                top: '20px'
+            },
+            // visualMap: {
+            //     // 不显示 visualMap 组件，只用于明暗度的映射
+            //     show: false,
+            //     // 映射的最小值为 80
+            //     min: 80,
+            //     // 映射的最大值为 600
+            //     max: 600,
+            //     inRange: {
+            //         // 明暗度的范围是 0 到 1
+            //         colorLightness: [0, 1]
+            //     }
+            // },
+            legend: {
+                data: ['知乎', 'chrome', 'QQ', '微博', '微信'],
+                top: '20px',
+                right: '110px'
+            },
+            series : [
+            {
+                name: 'app使用情况',
+                type: 'pie',
+                radius: '55%',
+                roseType: 'angle',//南丁格尔图,通过半径大小区分数据的大小
+                tooltip: { //提示框浮层，在饼图中并不需要，因为已经有引线显示了
+                    // trigger:'item', //触发类型
+                    // formatter:'{b} : {c} ({d}%)' //提示框浮层内容格式器
+                    //{a}（系列名称），{b}（数据项名称），{c}（数值）, {d}（百分比）
+                },
+                label:{ //饼图图形上的文本标签
+                    normal:{
+                        formatter:"{b} : {c} ({d}%)"
+                    }
+                },
+                data:[
+                    {value:235, name:'知乎'},
+                    {value:274, name:'chrome'},
+                    {value:310, name:'QQ'},
+                    {value:335, name:'微博'},
+                    {value:400, name:'微信'}
+                ],
+                itemStyle: {
+                    normal: {
+                        // 阴影的大小
+                        shadowBlur: 200,
+                        // 阴影水平方向上的偏移
+                        shadowOffsetX: 0,
+                        // 阴影垂直方向上的偏移
+                        shadowOffsetY: 0,
+                        // 阴影颜色
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    },
+                    emphasis: { //当鼠标hover时的样式，一般会加重阴影或者减淡透明度以强调
+                        shadowBlur: 100,
+                        shadowColor: 'rgba(0, 0, 0, 0.8)'
+                    }
+                }
+            }
+            ]
+        })
+        </script>
+    </body>
+</html>

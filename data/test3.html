@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+       <script type="text/javascript" src="jquery-3.2.1.min.js"></script>        
+        <script src="echarts.min.js"></script>
+        <script src="vintage.js"></script>
+    <style type="text/css">
+      *{
+        margin: 0;padding: 0;
+      }
+    </style>
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript">
+          var dom = document.getElementById("container");
+          var myChart = echarts.init(dom, 'vintage');
+          // var app = {};
+          option = null;
+          var base = +new Date(2014, 9, 3); //初始日期，实际是2014.10.3开始
+          var oneDay = 24 * 3600 * 1000; //单位毫秒，即一天
+          var date = [];//横轴日期
+
+          var data = [Math.random() * 150]; //纵轴
+          var now = new Date(base);
+
+          function addData(shift) {
+              now = [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'); //如果不加一就 变成NAN了？
+              date.push(now);
+              data.push((Math.random() - 0.4) * 10 + data[data.length - 1]);
+
+              if (shift) {
+                  date.shift();
+                  data.shift();
+              }
+
+              now = new Date(+new Date(now) + oneDay);
+          }
+
+          for (var i = 1; i < 100; i++) {
+              addData();
+          }
+
+          option = {
+              title: {
+                    text: '数据动态更新',
+                    textStyle: {fontSize: '25'},
+                    left: 'center',
+                    top: '20px'
+                },
+              // tooltip: {},
+              xAxis: {
+                  type: 'category',
+                  boundaryGap: false,
+                  data: date
+              },
+              yAxis: {
+                  boundaryGap: [0, '50%'],
+                  type: 'value'
+              },
+              series: [
+                  {
+                      name:'成交',
+                      type:'line',
+                      smooth:true,
+                      symbol: 'none',
+                      stack: 'a',
+                      areaStyle: {
+                          normal: {}
+                      },
+                      data: data
+                  }
+              ]
+          };
+
+          setInterval(function () {
+              addData(true);
+              myChart.setOption({
+                  xAxis: {
+                      data: date
+                  },
+                  series: [{
+                      name:'成交',
+                      data: data
+                  }]
+              });
+          }, 500);;
+          if (option && typeof option === "object") {
+              myChart.setOption(option, true);
+          }
+       </script>
+   </body>
+</html>
